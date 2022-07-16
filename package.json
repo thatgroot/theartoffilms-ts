@@ -1,0 +1,14 @@
+{
+  "version": "1.0.0",
+  "description": "\"api for frontend\"",
+  "author": "Rashid Iqbal <zerodayswork@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build": "tsc",
+    "start": "ts-node ./backend/index.ts",
+    "dev": "npx nodemon ./backend/index.ts --watch"
+  },
+  "name": "frontend",
+  "main": "index.js"
+}

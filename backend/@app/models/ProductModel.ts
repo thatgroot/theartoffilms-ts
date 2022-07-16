@@ -1,15 +1,21 @@
 import { model, Schema } from "mongoose";
 import { Product } from "../../@types";
-const { String, Array, Number, Mixed, ObjectId } = Schema.Types
+const { String, Number, Mixed, ObjectId } = Schema.Types
 
 const productSchema = new Schema<Product>({
  sku: { type: String, required: true },
  name: { type: String, required: true },
  description: { type: String },
  price: { type: Number, required: true },
- brand: Array<{ type: ObjectId, ref: "Taxanomy" }>,
- categories: Array<{ type: ObjectId, ref: "Taxanomy" }>,
- tags: Array<{ type: ObjectId, ref: "Taxanomy" }>,
+ brand: {
+  type: Array<{ type: ObjectId, ref: "Taxanomy" }>,
+ },
+ categories: {
+  type: Array<{ type: ObjectId, ref: "Taxanomy" }>,
+ },
+ tags: {
+  type: Array<{ type: ObjectId, ref: "Taxanomy" }>,
+ },
  media: {
   featured: { type: ObjectId, required: true },
   images: { type: Array, },

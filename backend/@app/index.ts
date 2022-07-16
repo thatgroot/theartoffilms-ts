@@ -14,7 +14,7 @@ class App {
   private middleware(): void {
     this.express.use(json());
     this.express.use(urlencoded({ extended: false }));
-    // this.express.use(express.static(path.join(__dirname, "../../ui/build")));
+
   }
 
   private routes(): void {
